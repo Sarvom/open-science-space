@@ -55,8 +55,8 @@ string cta-text-3:
 string cta-text-4:
 string cta-text-5:
 string cta-text-6:
-ftd.image-src menu: $assets.files.assets.nav_icon_mobile.png
-ftd.image-src close: $assets.files.assets.close_black.png
+ftd.image-src menu: $assets.files.assets.menu.png
+ftd.image-src close: $assets.files.assets.close.svg
 boolean $open: false
 
 -- ftd.column:
