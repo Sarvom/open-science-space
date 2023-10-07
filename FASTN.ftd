@@ -11,9 +11,3 @@ favicon: /-/sarvom.github.io/open-space-network/favicon.ico
 -- fastn.auto-import: sarvom.github.io/open-space-network/FASTN/ds
 -- fastn.auto-import: sarvom.github.io/open-space-network/assets
 -- fastn.auto-import: doc-site
-
--- fastn.sitemap:
-
-# Home: index.html
-
-- Right Sidebar Sample: /sidebar/
