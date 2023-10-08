@@ -28,14 +28,11 @@ optional string cta-text-1:
 optional string cta-text-2:
 optional string cta-text-3:
 optional string cta-text-4:
-optional string cta-text-5:
-optional string cta-text-6:
 optional string cta-text-1-url:
 optional string cta-text-2-url:
 optional string cta-text-3-url:
 optional string cta-text-4-url:
-optional string cta-text-5-url:
-optional string cta-text-6-url:
+
 
 -- ftd.column:
 width: fill-container
@@ -48,14 +45,10 @@ cta-text-1: $navbar.cta-text-1
 cta-text-2: $navbar.cta-text-2
 cta-text-3: $navbar.cta-text-3
 cta-text-4: $navbar.cta-text-4
-cta-text-5: $navbar.cta-text-5
-cta-text-6: $navbar.cta-text-6
 cta-text-1-url: $navbar.cta-text-1-url
 cta-text-2-url: $navbar.cta-text-2-url
 cta-text-3-url: $navbar.cta-text-3-url
 cta-text-4-url: $navbar.cta-text-4-url
-cta-text-5-url: $navbar.cta-text-5-url
-cta-text-6-url: $navbar.cta-text-6-url
 logo: $navbar.logo
 
 
@@ -65,14 +58,10 @@ cta-text-1: $navbar.cta-text-1
 cta-text-2: $navbar.cta-text-2
 cta-text-3: $navbar.cta-text-3
 cta-text-4: $navbar.cta-text-4
-cta-text-5: $navbar.cta-text-5
-cta-text-6: $navbar.cta-text-6
 cta-text-1-url: $navbar.cta-text-1-url
 cta-text-2-url: $navbar.cta-text-2-url
 cta-text-3-url: $navbar.cta-text-3-url
 cta-text-4-url: $navbar.cta-text-4-url
-cta-text-5-url: $navbar.cta-text-5-url
-cta-text-6-url: $navbar.cta-text-6-url
 logo: $navbar.logo
 
 -- end: ftd.column
@@ -173,19 +162,9 @@ color: $colors.text-
 link: $navbar-mobile.cta-text-4-url
 $on-click$: $ftd.set-bool($a = $navbar-mobile.open, v = false)
 
--- ftd.text: $navbar-mobile.cta-text-5
-role: $inherited.types.label-small
-margin-top.px: 8
-color: $colors.text-
-link: $navbar-mobile.cta-text-5-url
-$on-click$: $ftd.set-bool($a = $navbar-mobile.open, v = false)
 
--- ftd.text: $navbar-mobile.cta-text-6
-role: $inherited.types.label-small
-margin-top.px: 8
-color: $colors.text-
-link: $navbar-mobile.cta-text-6-url
-$on-click$: $ftd.set-bool($a = $navbar-mobile.open, v = false)
+
+
 
 -- ftd.row:
 width: fill-container
@@ -262,13 +241,6 @@ cta-text-url: $navbar-desktop.cta-text-3-url
 cta-text: $navbar-desktop.cta-text-4
 cta-text-url: $navbar-desktop.cta-text-4-url
 
--- navbar-text:
-cta-text: $navbar-desktop.cta-text-5
-cta-text-url: $navbar-desktop.cta-text-5-url
-
--- navbar-text: 
-cta-text: $navbar-desktop.cta-text-6
-cta-text-url: $navbar-desktop.cta-text-6-url
 
 -- end: ftd.row
 
@@ -305,7 +277,91 @@ color: $colors.cta-primary-text-
 color if { navbar-text.is-active } : $colors.accent-primary-
 align-self: center
 link: $$navbar-text.cta-text-url
-
 -- end: ftd.column
 
 -- end: navbar-text
+
+
+
+
+
+
+
+
+
+-- component hero-2:
+ftd.image-src cover:
+caption headline:
+body content:
+string cta-button-1:
+string link-1:
+boolean $is-active-1: false
+string cta-button-2:
+string link-2:
+boolean $is-active-2: false
+
+-- ftd.column:
+width: fill-container
+height: hug-content
+align-content: center
+padding-horizontal.px: 100
+padding-vertical.px: 96
+background.solid: $colors.base-
+
+-- ftd.image:
+src: $hero-2.cover
+width.fixed.percent: 45
+height: auto
+
+-- ftd.column:
+width.fixed.percent: 60
+align-content: center
+align-self: center
+
+-- ftd.text: $hero-2.headline
+margin-bottom.px: 16
+role: $inherited.types.heading-medium
+text-align: center
+color: $colors.text-
+
+-- ftd.text: $hero-2.content
+margin-bottom.px: 32
+role: $inherited.types.copy-regular
+text-align: center
+color: $colors.text-
+-- ftd.row:
+
+-- ftd.text: $hero-2.cta-button-1
+role: $inherited.types.label-large
+text-align: center
+padding-vertical.px: 8
+padding-horizontal.px: 24
+border-radius.px: 5
+background.solid: $colors.accent-primary-
+background.solid if {hero-2.is-active-1}: $colors.accent-secondary-
+$on-mouse-enter$: $ftd.set-bool($a = $hero-2.is-active-1, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $hero-2.is-active-1, v = false)
+link: $hero-2.link-1
+color: $colors.text-
+
+-- ftd.text: $hero-2.cta-button-2
+role: $inherited.types.label-large
+text-align: center
+padding-vertical.px: 8
+padding-horizontal.px: 24
+margin-left.px: 16
+border-radius.px: 5
+background.solid: $colors.accent-primary-
+background.solid if {hero-2.is-active-2}: $colors.accent-secondary-
+$on-mouse-enter$: $ftd.set-bool($a = $hero-2.is-active-2, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $hero-2.is-active-2, v = false)
+link: $hero-2.link-2
+color: $colors.text-
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: hero-2

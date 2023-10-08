@@ -6,13 +6,19 @@ cta-text-1: Offerings
 cta-text-2: Team
 cta-text-3: Clients
 cta-text-4: Sectors
-cta-text-5: Clients
-cta-text-6: Sectors
 cta-text-1-url: index.html
 cta-text-2-url: index.html#aboutus
 cta-text-3-url: index.html#participate
 cta-text-4-url: index.html#participate
-cta-text-5-url: index.html#participate
-cta-text-6-url: index.html#participate
+
+-- lib.hero-2: Before they sold out readymade gluten
+cta-button-1: Button
+link-1: https://media.tenor.com/t7rftXtub88AAAAC/among-us.gif
+cta-button-2: Button
+link-2: https://media.tenor.com/t7rftXtub88AAAAC/among-us.gif
+cover: $assets.files.assets.logo.png
+
+Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag.
+Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.
 
 -- end: lib.page
