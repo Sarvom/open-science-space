@@ -1,12 +1,41 @@
+-- component page:
+children c:
+
+-- ftd.column:
+width: fill-container
+types: $fonts.types
+background.solid: $colors.base-
+
+-- ftd.column:
+width: fill-container
+children: $page.c
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: page
+
+
+
+
+
+
+
 -- component navbar:
 ftd.image-src logo:
-string cta-text-1:
-string cta-text-2:
-string cta-text-3:
-string cta-text-4:
-string cta-text-5:
-string cta-text-6:
-
+optional string cta-text-1:
+optional string cta-text-2:
+optional string cta-text-3:
+optional string cta-text-4:
+optional string cta-text-5:
+optional string cta-text-6:
+optional string cta-text-1-url:
+optional string cta-text-2-url:
+optional string cta-text-3-url:
+optional string cta-text-4-url:
+optional string cta-text-5-url:
+optional string cta-text-6-url:
 
 -- ftd.column:
 width: fill-container
@@ -21,6 +50,12 @@ cta-text-3: $navbar.cta-text-3
 cta-text-4: $navbar.cta-text-4
 cta-text-5: $navbar.cta-text-5
 cta-text-6: $navbar.cta-text-6
+cta-text-1-url: $navbar.cta-text-1-url
+cta-text-2-url: $navbar.cta-text-2-url
+cta-text-3-url: $navbar.cta-text-3-url
+cta-text-4-url: $navbar.cta-text-4-url
+cta-text-5-url: $navbar.cta-text-5-url
+cta-text-6-url: $navbar.cta-text-6-url
 logo: $navbar.logo
 
 
@@ -32,6 +67,12 @@ cta-text-3: $navbar.cta-text-3
 cta-text-4: $navbar.cta-text-4
 cta-text-5: $navbar.cta-text-5
 cta-text-6: $navbar.cta-text-6
+cta-text-1-url: $navbar.cta-text-1-url
+cta-text-2-url: $navbar.cta-text-2-url
+cta-text-3-url: $navbar.cta-text-3-url
+cta-text-4-url: $navbar.cta-text-4-url
+cta-text-5-url: $navbar.cta-text-5-url
+cta-text-6-url: $navbar.cta-text-6-url
 logo: $navbar.logo
 
 -- end: ftd.column
@@ -49,12 +90,18 @@ logo: $navbar.logo
 
 -- component navbar-mobile:
 ftd.image-src logo:
-string cta-text-1:
-string cta-text-2:
-string cta-text-3:
-string cta-text-4:
-string cta-text-5:
-string cta-text-6:
+optional string cta-text-1:
+optional string cta-text-2:
+optional string cta-text-3:
+optional string cta-text-4:
+optional string cta-text-5:
+optional string cta-text-6:
+optional string cta-text-1-url:
+optional string cta-text-2-url:
+optional string cta-text-3-url:
+optional string cta-text-4-url:
+optional string cta-text-5-url:
+optional string cta-text-6-url:
 ftd.image-src menu: $assets.files.assets.menu.png
 ftd.image-src close: $assets.files.assets.close.svg
 boolean $open: false
@@ -102,13 +149,13 @@ padding-left.px: 16
 role: $inherited.types.label-small
 margin-top.px: 8
 color: $colors.text-
-link: index.html
+link: $navbar-mobile.cta-text-1-url
 
 -- ftd.text: $navbar-mobile.cta-text-2
 role: $inherited.types.label-small
 margin-top.px: 8
 color: $colors.text-
-link: index.html#aboutus
+link: $navbar-mobile.cta-text-2-url
 $on-click$: $ftd.set-bool($a = $navbar-mobile.open, v = false)
 
 
@@ -116,28 +163,28 @@ $on-click$: $ftd.set-bool($a = $navbar-mobile.open, v = false)
 role: $inherited.types.label-small
 margin-top.px: 8
 color: $colors.text-
-link: index.html#sponsors
+link: $navbar-mobile.cta-text-3-url
 $on-click$: $ftd.set-bool($a = $navbar-mobile.open, v = false)
 
 -- ftd.text: $navbar-mobile.cta-text-4
 role: $inherited.types.label-small
 margin-top.px: 8
 color: $colors.text-
-link: index.html#participate
+link: $navbar-mobile.cta-text-4-url
 $on-click$: $ftd.set-bool($a = $navbar-mobile.open, v = false)
 
 -- ftd.text: $navbar-mobile.cta-text-5
 role: $inherited.types.label-small
 margin-top.px: 8
 color: $colors.text-
-link: index.html#participate
+link: $navbar-mobile.cta-text-5-url
 $on-click$: $ftd.set-bool($a = $navbar-mobile.open, v = false)
 
 -- ftd.text: $navbar-mobile.cta-text-6
 role: $inherited.types.label-small
 margin-top.px: 8
 color: $colors.text-
-link: index.html#participate
+link: $navbar-mobile.cta-text-6-url
 $on-click$: $ftd.set-bool($a = $navbar-mobile.open, v = false)
 
 -- ftd.row:
@@ -171,6 +218,12 @@ optional string cta-text-3:
 optional string cta-text-4:
 optional string cta-text-5:
 optional string cta-text-6:
+optional string cta-text-1-url:
+optional string cta-text-2-url:
+optional string cta-text-3-url:
+optional string cta-text-4-url:
+optional string cta-text-5-url:
+optional string cta-text-6-url:
 
 -- ftd.row:
 width: fill-container
@@ -193,29 +246,29 @@ height: fill-container
 spacing.fixed.px: 16
 
 
--- navbar-text: 
+-- navbar-text:
 cta-text: $navbar-desktop.cta-text-1
-cta-text-url: index.html
+cta-text-url: $navbar-desktop.cta-text-1-url
 
 -- navbar-text: 
 cta-text: $navbar-desktop.cta-text-2
-cta-text-url: index.html#aboutus
+cta-text-url: $navbar-desktop.cta-text-2-url
 
 -- navbar-text: 
 cta-text: $navbar-desktop.cta-text-3
-cta-text-url: index.html#sponsors
+cta-text-url: $navbar-desktop.cta-text-3-url
 
--- navbar-text: 
+-- navbar-text:
 cta-text: $navbar-desktop.cta-text-4
-cta-text-url: index.html#participate
+cta-text-url: $navbar-desktop.cta-text-4-url
 
--- navbar-text: 
+-- navbar-text:
 cta-text: $navbar-desktop.cta-text-5
-cta-text-url: index.html#participate
+cta-text-url: $navbar-desktop.cta-text-5-url
 
 -- navbar-text: 
 cta-text: $navbar-desktop.cta-text-6
-cta-text-url: index.html#participate
+cta-text-url: $navbar-desktop.cta-text-6-url
 
 -- end: ftd.row
 

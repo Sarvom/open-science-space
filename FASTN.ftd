@@ -7,9 +7,14 @@ favicon: /-/sarvom.github.io/open-science-space/favicon.ico
 -- fastn.dependency: fastn-community.github.io/footer
 -- fastn.dependency: fastn-community.github.io/roboto-typography
 -- fastn.dependency: fastn-community.github.io/dark-flame-cs
+-- fastn.dependency: fifthtry.github.io/admint-nunito-font/assets 
+-- fastn.dependency: fifthtry.github.io/inter-font
+-- fastn.dependency: fifthtry.github.io/admint-nunito-font
+
 
 -- fastn.auto-import: sarvom.github.io/open-science-space/FASTN/ds
 -- fastn.auto-import: sarvom.github.io/open-science-space/assets
 -- fastn.auto-import: sarvom.github.io/open-science-space/colors
 -- fastn.auto-import: sarvom.github.io/open-science-space/lib
+-- fastn.auto-import: sarvom.github.io/open-science-space/fonts
 -- fastn.auto-import: doc-site
