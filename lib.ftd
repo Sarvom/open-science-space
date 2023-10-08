@@ -289,79 +289,401 @@ link: $$navbar-text.cta-text-url
 
 
 
--- component hero-2:
-ftd.image-src cover:
-caption headline:
-body content:
+-- component hero:
+caption heading:
+optional string text-1:
+optional string text-2:
+optional string text-3:
 string cta-button-1:
-string link-1:
-boolean $is-active-1: false
-string cta-button-2:
-string link-2:
-boolean $is-active-2: false
+body content:
 
 -- ftd.column:
 width: fill-container
-height: hug-content
-align-content: center
-padding-horizontal.px: 100
-padding-vertical.px: 96
-background.solid: $colors.base-
 
--- ftd.image:
-src: $hero-2.cover
-width.fixed.percent: 45
-height: auto
+-- hero-mobile:
+if: { ftd.device == "mobile" }
+heading: $hero.heading
+text-1: $hero.text-1
+cta-button-1: $hero.cta-button-1
+content: $hero.content
+
+-- hero-desktop:
+if: { ftd.device == "desktop" }
+heading: $hero.heading
+text-1: $hero.text-1
+cta-button-1: $hero.cta-button-1
+content: $hero.content
+
+-- end: ftd.column
+
+-- end: hero
+
+
+
+
+-- component hero-mobile:
+caption heading:
+optional string text-1:
+optional string text-2:
+optional string text-3:
+string cta-button-1:
+body content:
 
 -- ftd.column:
-width.fixed.percent: 60
+width: fill-container
+align-content: center
+background.image: $assets.files.assets.bg-2.png
+height.fixed.vh: 100
+
+-- ftd.column:
+margin-vertical.px: 24
+width: fill-container
+padding-horizontal.vw: 5
 align-content: center
 align-self: center
 
--- ftd.text: $hero-2.headline
-margin-bottom.px: 16
-role: $inherited.types.heading-medium
+-- ftd.text: $hero-mobile.heading
+role: $inherited.types.heading-hero
+style: bold
 text-align: center
-color: $colors.text-
+color: $colors.accent-primary-
 
--- ftd.text: $hero-2.content
-margin-bottom.px: 32
-role: $inherited.types.copy-regular
+-- ftd.text: $hero-mobile.content
+margin-top.vh: 1
+margin-bottom.vh: 5
+role: $inherited.types.heading-large
+color: $colors.accent-secondary-
 text-align: center
-color: $colors.text-
+
 -- ftd.row:
+if: { hero-mobile.text-1 != NULL }
+spacing.fixed.px: 8
 
--- ftd.text: $hero-2.cta-button-1
-role: $inherited.types.label-large
-text-align: center
-padding-vertical.px: 8
-padding-horizontal.px: 24
-border-radius.px: 5
-background.solid: $colors.accent-primary-
-background.solid if {hero-2.is-active-1}: $colors.accent-secondary-
-$on-mouse-enter$: $ftd.set-bool($a = $hero-2.is-active-1, v = true)
-$on-mouse-leave$: $ftd.set-bool($a = $hero-2.is-active-1, v = false)
-link: $hero-2.link-1
-color: $colors.text-
+-- ftd.image:
+src: $assets.files.assets.calendar-white.png
+height.fixed.px: 24
+align-self: center
 
--- ftd.text: $hero-2.cta-button-2
-role: $inherited.types.label-large
-text-align: center
-padding-vertical.px: 8
-padding-horizontal.px: 24
-margin-left.px: 16
-border-radius.px: 5
-background.solid: $colors.accent-primary-
-background.solid if {hero-2.is-active-2}: $colors.accent-secondary-
-$on-mouse-enter$: $ftd.set-bool($a = $hero-2.is-active-2, v = true)
-$on-mouse-leave$: $ftd.set-bool($a = $hero-2.is-active-2, v = false)
-link: $hero-2.link-2
-color: $colors.text-
+-- ftd.text: $hero-mobile.text-1
+if: { hero-mobile.text-1 != NULL }
+margin-vertical.vh: 1
+role: $inherited.types.heading-small
+align-self: center
+color: white
 
 -- end: ftd.row
 
--- end: ftd.column
+-- ftd.row:
+spacing.fixed.px: 8
+
+-- ftd.image:
+if: { hero-mobile.text-2 != NULL }
+src: $assets.files.assets.clock.svg
+height.fixed.px: 24
+align-self: center
+
+-- ftd.text: $hero-mobile.text-2
+if: { hero-mobile.text-2 != NULL }
+margin-vertical.vh: 1
+role: $inherited.types.heading-small
+align-self: center
+color: white
+
+-- end: ftd.row
+
+-- ftd.row:
+if: { hero-mobile.text-3 != NULL }
+spacing.fixed.px: 8
+
+-- ftd.image:
+src: $assets.files.assets.location-2.png
+height.fixed.px: 24
+align-self: center
+
+-- ftd.text: $hero-mobile.text-3
+if: { hero-mobile.text-3 != NULL }
+margin-vertical.vh: 1
+role: $inherited.types.heading-small
+align-self: center
+color: #ffac1d
+
+-- end: ftd.row
+
+-- button-3: $hero-mobile.cta-button-1
+link: https://github.com/Trizwit/fastnfoliotemp
 
 -- end: ftd.column
 
--- end: hero-2
+-- end: ftd.column
+
+-- end: hero-mobile
+
+
+
+
+
+
+-- component hero-desktop:
+caption heading:
+optional string text-1:
+optional string text-2:
+optional string text-3:
+string cta-button-1:
+body content:
+
+-- ftd.row:
+width: fill-container
+background.image: $assets.files.assets.bg.png
+height.fixed.vh: 90
+
+-- ftd.column:
+padding.vh: 16
+width: fill-container
+align-content: center
+align-self: center
+
+-- ftd.text: $hero-desktop.heading
+role: $inherited.types.heading-hero
+style: bold
+text-align: center
+color: $colors.accent-primary-
+
+-- ftd.text: $hero-desktop.content
+margin-top.vh: 1
+margin-bottom.vh: 5
+role: $inherited.types.heading-large
+style: regular
+color: $colors.accent-secondary-
+text-align: center
+
+-- ftd.row:
+spacing.fixed.px: 16
+
+-- ftd.row:
+if: { hero-desktop.text-1 != NULL }
+spacing.fixed.px: 8
+
+-- ftd.image:
+src: $assets.files.assets.calendar-white.png
+height.fixed.px: 48
+align-self: center
+
+-- ftd.text: $hero-desktop.text-1
+if: { hero-desktop.text-1 != NULL }
+margin-vertical.vh: 1
+role: $inherited.types.heading-medium
+align-self: center
+color: white
+
+-- end: ftd.row
+
+-- ftd.row:
+if: { hero-desktop.text-2 != NULL }
+spacing.fixed.px: 8
+
+-- ftd.image:
+src: $assets.files.assets.clock.svg
+height.fixed.px: 48
+align-self: center
+
+-- ftd.text: $hero-desktop.text-2
+if: { hero-desktop.text-2 != NULL }
+margin-vertical.vh: 1
+role: $inherited.types.heading-medium
+align-self: center
+color: white
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- ftd.row:
+if: { hero-desktop.text-3 != NULL }
+spacing.fixed.px: 8
+
+-- ftd.image:
+src: $assets.files.assets.location-2.png
+height.fixed.px: 48
+align-self: center
+
+-- ftd.text: $hero-desktop.text-3
+if: { hero-desktop.text-3 != NULL }
+margin-vertical.vh: 1
+role: $inherited.types.heading-medium
+align-self: center
+color: #faac1d
+
+-- end: ftd.row
+
+-- button-4: $hero-desktop.cta-button-1
+link: https://github.com/Trizwit/fastnfoliotemp
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: hero-desktop
+
+
+
+
+
+
+
+
+
+-- component button-1:
+caption title: 
+string link:
+boolean $is-active-1: false
+
+-- ftd.row:
+padding-horizontal.px: 12
+padding-vertical.px: 16
+border-radius.px: 32
+background.solid: Yellow
+link: $button-1.link
+$on-mouse-enter$: $ftd.set-bool($a = $button-1.is-active-1, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $button-1.is-active-1, v = false)
+border-bottom-width.px if { button-1.is-active-1}: 2
+
+-- ftd.text: $button-1.title
+
+-- end: ftd.row
+
+-- end: button-1
+
+
+
+
+
+
+
+
+
+-- component button-2:
+caption title: 
+string link:
+boolean $is-active: false
+
+-- ftd.row:
+width.fixed.px: 100
+align-content: center
+padding-horizontal.px: 12
+padding-vertical.px: 16
+border-radius.px: 10
+background.solid: #01FEDE
+link: $button-2.link
+border-width.px: 2
+
+-- ftd.text: $button-2.title
+role: $inherited.types.label-large
+color: #181939
+
+-- end: ftd.row
+
+-- end: button-2
+
+
+
+
+
+
+
+
+
+
+-- component button-3:
+caption title: 
+string link:
+boolean $is-active: false
+
+-- ftd.row:
+margin-vertical.px: 24
+padding-horizontal.px: 12
+padding-vertical.px: 16
+border-radius.px: 10
+background.solid if { button-3.is-active} : White
+background.solid: #01FEDE
+$on-mouse-enter$: $ftd.set-bool($a = $button-3.is-active, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $button-3.is-active, v = false)
+link: $button-3.link
+
+-- ftd.text: $button-3.title
+role: $inherited.types.heading-small
+style: bold
+color: White
+color if { button-3.is-active}: #01FEDE
+
+-- end: ftd.row
+
+-- end: button-3
+
+
+
+
+
+
+
+
+-- component button-4:
+caption title: 
+string link:
+boolean $is-active: false
+
+-- ftd.row:
+margin-vertical.px: 24
+padding-horizontal.px: 24
+padding-vertical.px: 16
+border-radius.px: 10
+background.solid if { button-4.is-active} : White
+background.solid: #01FEDE
+$on-mouse-enter$: $ftd.set-bool($a = $button-4.is-active, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $button-4.is-active, v = false)
+link: $button-4.link
+
+-- ftd.text: $button-4.title
+role: $inherited.types.heading-small
+style: bold
+color: #181939
+color if { button-4.is-active}: #2821f1
+
+-- end: ftd.row
+
+-- end: button-4
+
+
+
+
+
+
+
+
+
+
+-- component button-5:
+caption title: 
+string link:
+boolean $is-active: false
+
+-- ftd.row:
+align-content: center
+width.fixed.px: 120
+padding-horizontal.px: 12
+padding-vertical.px: 16
+border-radius.px: 10
+background.solid if { button-5.is-active} : White
+background.solid: #01FEDE
+$on-mouse-enter$: $ftd.set-bool($a = $button-5.is-active, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $button-5.is-active, v = false)
+link: $button-5.link
+
+-- ftd.text: $button-5.title
+role: $inherited.types.label-large
+style: bold
+color: #181939
+color if { button-5.is-active}: #2821f1
+
+-- end: ftd.row
+
+-- end: button-5
