@@ -1,4 +1,4 @@
-
+-- lib.page:
 
 -- lib.navbar:
 logo: $assets.files.assets.logo.png
@@ -6,5 +6,13 @@ cta-text-1: Offerings
 cta-text-2: Team
 cta-text-3: Clients
 cta-text-4: Sectors
-cta-text-5: Approach
-cta-text-6: Ethos
+cta-text-5: Clients
+cta-text-6: Sectors
+cta-text-1-url: index.html
+cta-text-2-url: index.html#aboutus
+cta-text-3-url: index.html#participate
+cta-text-4-url: index.html#participate
+cta-text-5-url: index.html#participate
+cta-text-6-url: index.html#participate
+
+-- end: lib.page
