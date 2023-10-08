@@ -6,6 +6,15 @@ width: fill-container
 types: $fonts.types
 background.solid: $colors.base-
 
+-- navbar:
+logo: $assets.files.assets.logo.png
+cta-text-1: Collaborate
+cta-text-2: Create
+cta-text-3: About
+cta-text-1-url: collaborate
+cta-text-2-url: create
+cta-text-3-url: about
+
 -- ftd.column:
 width: fill-container
 children: $page.c
@@ -27,11 +36,9 @@ ftd.image-src logo:
 optional string cta-text-1:
 optional string cta-text-2:
 optional string cta-text-3:
-optional string cta-text-4:
 optional string cta-text-1-url:
 optional string cta-text-2-url:
 optional string cta-text-3-url:
-optional string cta-text-4-url:
 
 
 -- ftd.column:
@@ -44,11 +51,9 @@ if: { ftd.device == "mobile" }
 cta-text-1: $navbar.cta-text-1
 cta-text-2: $navbar.cta-text-2
 cta-text-3: $navbar.cta-text-3
-cta-text-4: $navbar.cta-text-4
 cta-text-1-url: $navbar.cta-text-1-url
 cta-text-2-url: $navbar.cta-text-2-url
 cta-text-3-url: $navbar.cta-text-3-url
-cta-text-4-url: $navbar.cta-text-4-url
 logo: $navbar.logo
 
 
@@ -57,11 +62,9 @@ if: { ftd.device == "desktop" }
 cta-text-1: $navbar.cta-text-1
 cta-text-2: $navbar.cta-text-2
 cta-text-3: $navbar.cta-text-3
-cta-text-4: $navbar.cta-text-4
 cta-text-1-url: $navbar.cta-text-1-url
 cta-text-2-url: $navbar.cta-text-2-url
 cta-text-3-url: $navbar.cta-text-3-url
-cta-text-4-url: $navbar.cta-text-4-url
 logo: $navbar.logo
 
 -- end: ftd.column
@@ -109,6 +112,7 @@ spacing: space-between
 src: $navbar-mobile.logo
 height.fixed.px: 40
 margin-left.px: 8
+link: index.html
 
 -- ftd.image:
 if: { !navbar-mobile.open }
@@ -154,17 +158,6 @@ margin-top.px: 8
 color: $colors.text-
 link: $navbar-mobile.cta-text-3-url
 $on-click$: $ftd.set-bool($a = $navbar-mobile.open, v = false)
-
--- ftd.text: $navbar-mobile.cta-text-4
-role: $inherited.types.label-small
-margin-top.px: 8
-color: $colors.text-
-link: $navbar-mobile.cta-text-4-url
-$on-click$: $ftd.set-bool($a = $navbar-mobile.open, v = false)
-
-
-
-
 
 -- ftd.row:
 width: fill-container
@@ -219,6 +212,7 @@ src: $navbar-desktop.logo
 height.fixed.px: 64
 padding.vh: 1
 align-self: center
+link: index.html
 
 -- ftd.row:
 height: fill-container
@@ -236,11 +230,6 @@ cta-text-url: $navbar-desktop.cta-text-2-url
 -- navbar-text: 
 cta-text: $navbar-desktop.cta-text-3
 cta-text-url: $navbar-desktop.cta-text-3-url
-
--- navbar-text:
-cta-text: $navbar-desktop.cta-text-4
-cta-text-url: $navbar-desktop.cta-text-4-url
-
 
 -- end: ftd.row
 
@@ -295,6 +284,7 @@ optional string text-1:
 optional string text-2:
 optional string text-3:
 string cta-button-1:
+string cta-button-1-url:
 body content:
 
 -- ftd.column:
@@ -305,6 +295,7 @@ if: { ftd.device == "mobile" }
 heading: $hero.heading
 text-1: $hero.text-1
 cta-button-1: $hero.cta-button-1
+cta-button-1-url: $hero.cta-button-1-url
 content: $hero.content
 
 -- hero-desktop:
@@ -312,6 +303,7 @@ if: { ftd.device == "desktop" }
 heading: $hero.heading
 text-1: $hero.text-1
 cta-button-1: $hero.cta-button-1
+cta-button-1-url: $hero.cta-button-1-url
 content: $hero.content
 
 -- end: ftd.column
@@ -327,6 +319,7 @@ optional string text-1:
 optional string text-2:
 optional string text-3:
 string cta-button-1:
+string cta-button-1-url:
 body content:
 
 -- ftd.column:
@@ -410,7 +403,7 @@ color: #ffac1d
 -- end: ftd.row
 
 -- button-3: $hero-mobile.cta-button-1
-link: https://github.com/Trizwit/fastnfoliotemp
+link: $hero-mobile.cta-button-1-url
 
 -- end: ftd.column
 
@@ -429,6 +422,7 @@ optional string text-1:
 optional string text-2:
 optional string text-3:
 string cta-button-1:
+string cta-button-1-url:
 body content:
 
 -- ftd.row:
@@ -516,7 +510,7 @@ color: #faac1d
 -- end: ftd.row
 
 -- button-4: $hero-desktop.cta-button-1
-link: https://github.com/Trizwit/fastnfoliotemp
+link: $hero-desktop.cta-button-1-url
 
 -- end: ftd.column
 
@@ -687,3 +681,332 @@ color if { button-5.is-active}: #2821f1
 -- end: ftd.row
 
 -- end: button-5
+
+
+
+
+
+
+
+
+
+
+-- component blog-1:
+caption title:
+string head:
+ftd.image-src pic:
+string cta-text:
+string cta-text-url:
+body body:
+
+-- ftd.column:
+background.solid: $colors.step-1-
+max-width.fixed.percent: 25
+
+-- ftd.image:
+src: $blog-1.pic
+width: fill-container
+
+-- ftd.column:
+padding.px: 24
+
+-- ftd.text: $blog-1.head
+role: $fonts.types.label-large
+color: $colors.accent-primary-
+margin-bottom.px: 4
+
+-- ftd.text: $blog-1.title
+role: $fonts.types.copy-large
+color: $colors.text-
+margin-bottom.px: 12
+
+-- ftd.text: $blog-1.body
+role: $fonts.types.copy-small
+color: $colors.text-
+
+-- ftd.row:
+background.solid: $colors.accent-primary-
+padding.px: 8
+align-content: center
+border-radius.px: 5
+margin-top.px: 8
+
+-- ftd.text: $blog-1.cta-text
+role: $fonts.types.button-small
+color: $colors.text-
+link: $blog-1.cta-text-url
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: blog-1
+
+
+
+
+
+
+
+
+
+-- component hero-2:
+caption heading:
+optional string text-1:
+optional string text-2:
+optional string text-3:
+string cta-button-1:
+string cta-button-1-url:
+body content:
+
+-- ftd.column:
+width: fill-container
+
+-- hero-2-mobile:
+if: { ftd.device == "mobile" }
+heading: $hero-2.heading
+text-1: $hero-2.text-1
+cta-button-1: $hero-2.cta-button-1
+cta-button-1-url: $hero-2.cta-button-1-url
+content: $hero-2.content
+
+-- hero-2-desktop:
+if: { ftd.device == "desktop" }
+heading: $hero-2.heading
+text-1: $hero-2.text-1
+cta-button-1: $hero-2.cta-button-1
+cta-button-1-url: $hero-2.cta-button-1-url
+content: $hero-2.content
+
+-- end: ftd.column
+
+-- end: hero-2
+
+
+
+
+-- component hero-2-mobile:
+caption heading:
+optional string text-1:
+optional string text-2:
+optional string text-3:
+string cta-button-1:
+string cta-button-1-url:
+body content:
+
+-- ftd.column:
+width: fill-container
+align-content: center
+height.fixed.vh: 100
+
+-- ftd.column:
+margin-vertical.px: 24
+width: fill-container
+padding-horizontal.vw: 5
+align-self: center
+
+-- ftd.text: $hero-2-mobile.heading
+role: $inherited.types.heading-hero
+style: bold
+color: $colors.accent-primary-
+
+-- ftd.text: $hero-2-mobile.content
+margin-top.vh: 1
+margin-bottom.vh: 5
+role: $inherited.types.heading-large
+color: $colors.accent-secondary-
+text-align: center
+
+-- ftd.row:
+if: { hero-2-mobile.text-1 != NULL }
+spacing.fixed.px: 8
+
+-- ftd.image:
+src: $assets.files.assets.calendar-white.png
+height.fixed.px: 24
+align-self: center
+
+-- ftd.text: $hero-2-mobile.text-1
+if: { hero-2-mobile.text-1 != NULL }
+margin-vertical.vh: 1
+role: $inherited.types.heading-small
+align-self: center
+color: white
+
+-- end: ftd.row
+
+-- ftd.row:
+spacing.fixed.px: 8
+
+-- ftd.image:
+if: { hero-2-mobile.text-2 != NULL }
+src: $assets.files.assets.clock.svg
+height.fixed.px: 24
+align-self: center
+
+-- ftd.text: $hero-2-mobile.text-2
+if: { hero-2-mobile.text-2 != NULL }
+margin-vertical.vh: 1
+role: $inherited.types.heading-small
+align-self: center
+color: white
+
+-- end: ftd.row
+
+-- ftd.row:
+if: { hero-2-mobile.text-3 != NULL }
+spacing.fixed.px: 8
+
+-- ftd.image:
+src: $assets.files.assets.location-2.png
+height.fixed.px: 24
+align-self: center
+
+-- ftd.text: $hero-2-mobile.text-3
+if: { hero-2-mobile.text-3 != NULL }
+margin-vertical.vh: 1
+role: $inherited.types.heading-small
+align-self: center
+color: #ffac1d
+
+-- end: ftd.row
+
+-- button-3: $hero-2-mobile.cta-button-1
+link: $hero-2-mobile.cta-button-1-url
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: hero-2-mobile
+
+
+
+
+
+
+-- component hero-2-desktop:
+caption heading:
+optional string text-1:
+optional string text-2:
+optional string text-3:
+string cta-button-1:
+string cta-button-1-url:
+body content:
+
+-- ftd.row:
+width: fill-container
+height.fixed.vh: 90
+
+-- ftd.column:
+padding.vh: 16
+width: fill-container
+align-self: center
+
+-- ftd.text: $hero-2-desktop.heading
+role: $inherited.types.heading-hero
+style: bold
+color: $colors.accent-primary-
+
+-- ftd.text: $hero-2-desktop.content
+margin-top.vh: 1
+margin-bottom.vh: 5
+role: $inherited.types.heading-large
+style: regular
+color: $colors.accent-secondary-
+
+-- ftd.row:
+spacing.fixed.px: 16
+
+-- ftd.row:
+if: { hero-2-desktop.text-1 != NULL }
+spacing.fixed.px: 8
+
+-- ftd.image:
+src: $assets.files.assets.calendar-white.png
+height.fixed.px: 48
+align-self: center
+
+-- ftd.text: $hero-2-desktop.text-1
+if: { hero-2-desktop.text-1 != NULL }
+margin-vertical.vh: 1
+role: $inherited.types.heading-medium
+align-self: center
+color: white
+
+-- end: ftd.row
+
+-- ftd.row:
+if: { hero-2-desktop.text-2 != NULL }
+spacing.fixed.px: 8
+
+-- ftd.image:
+src: $assets.files.assets.clock.svg
+height.fixed.px: 48
+align-self: center
+
+-- ftd.text: $hero-2-desktop.text-2
+if: { hero-2-desktop.text-2 != NULL }
+margin-vertical.vh: 1
+role: $inherited.types.heading-medium
+align-self: center
+color: white
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- ftd.row:
+if: { hero-2-desktop.text-3 != NULL }
+spacing.fixed.px: 8
+
+-- ftd.image:
+src: $assets.files.assets.location-2.png
+height.fixed.px: 48
+align-self: center
+
+-- ftd.text: $hero-2-desktop.text-3
+if: { hero-2-desktop.text-3 != NULL }
+margin-vertical.vh: 1
+role: $inherited.types.heading-medium
+align-self: center
+color: #faac1d
+
+-- end: ftd.row
+
+-- button-4: $hero-2-desktop.cta-button-1
+link: $hero-2-desktop.cta-button-1-url
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: hero-2-desktop
+
+
+
+
+
+
+
+
+-- component container-wrapper:
+children c:
+
+-- ftd.row:
+max-width: fill-container
+min-width if { ftd.device == "mobile" }: fill-container
+min-width.fixed.px if { ftd.device == "desktop" }: 1080
+margin-vertical.px: 32
+margin-horizontal.px: 32
+align-self: center
+align-content: center
+spacing.fixed.px: 24
+children: $container-wrapper.c
+wrap: true
+
+-- end: ftd.row
+
+-- end: container-wrapper

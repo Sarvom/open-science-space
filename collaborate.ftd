@@ -1,0 +1,47 @@
+-- lib.page:
+
+-- lib.container-wrapper:
+
+-- lib.blog-1: Exoplanet Detection and signal processing
+head: Astrophysics
+pic: $assets.files.assets.astrophysics.png
+cta-text: Collaborate
+cta-text-url: https://github.com/Sarvom/Astrophysics
+
+This project focus processing signals from exoplanets and detecting possibility of life
+
+-- lib.blog-1: Aerodynamics drag and design of craft
+head: Aerospace
+pic: $assets.files.assets.aerospace.png
+cta-text: Collaborate
+cta-text-url: https://github.com/Sarvom/Aerospace
+
+This project focus on Aerodynamics drag and design of craft effectively.
+
+-- lib.blog-1: Black hole exploration and exobiology
+head: Astronomy
+pic: $assets.files.assets.bg.png
+cta-text: Collaborate
+cta-text-url: https://github.com/Sarvom/Astronomy
+
+Astronomy project focuses on black hole exploration and life on the exoplanet.
+
+-- lib.blog-1: Fundamental Physics and learning
+head: Physics
+pic: $assets.files.assets.physics.png
+cta-text: Collaborate
+cta-text-url: https://github.com/Sarvom/physics
+
+This project focuses on fundamental physics and basic learning. 
+
+-- lib.blog-1: Quantum Computing and Possibilities
+head: Quantum Physics
+pic: $assets.files.assets.quantumphysics.png
+cta-text: Collaborate
+cta-text-url: https://github.com/Sarvom/Quantum-Physics
+
+Quantum Computing project that focuses on development of physics
+
+-- end: lib.container-wrapper
+
+-- end: lib.page
