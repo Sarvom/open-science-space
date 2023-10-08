@@ -1,8 +1,8 @@
 -- lib.page:
 
--- lib.hero: Open Science Space
-cta-button-1: Explore
-cta-button-1-url: collaborate
+-- lib.hero: About Open Science Space
+cta-button-1: Know More
+cta-button-1-url: index.html
 
 A Space for open science enthusiasts to connect and collaborate
 
