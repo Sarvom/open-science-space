@@ -1,9 +1,13 @@
 -- lib.page:
 
--- lib.hero: About Open Science Space
+-- hero.hero: About Open Science Space
 cta-button-1: Know More
 cta-button-1-url: index.html
 
-A Space for open science enthusiasts to connect and collaborate
+Open Science Space is a dynamic and inclusive platform designed to foster innovation, 
+collaboration, and the free exchange of knowledge within the realms of technology and 
+science. This unique space provides a welcoming environment for enthusiasts, researchers, 
+and experts alike to embark on their own projects, share their discoveries, and engage 
+with a global community of curious minds
 
 -- end: lib.page

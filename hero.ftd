@@ -1,0 +1,234 @@
+-- component hero:
+caption heading:
+optional string text-1:
+optional string text-2:
+optional string text-3:
+string cta-button-1:
+string cta-button-1-url:
+body content:
+
+-- ftd.column:
+width: fill-container
+
+-- hero-mobile:
+if: { ftd.device == "mobile" }
+heading: $hero.heading
+text-1: $hero.text-1
+cta-button-1: $hero.cta-button-1
+cta-button-1-url: $hero.cta-button-1-url
+content: $hero.content
+
+-- hero-desktop:
+if: { ftd.device == "desktop" }
+heading: $hero.heading
+text-1: $hero.text-1
+cta-button-1: $hero.cta-button-1
+cta-button-1-url: $hero.cta-button-1-url
+content: $hero.content
+
+-- end: ftd.column
+
+-- end: hero
+
+
+
+
+-- component hero-mobile:
+caption heading:
+optional string text-1:
+optional string text-2:
+optional string text-3:
+string cta-button-1:
+string cta-button-1-url:
+body content:
+
+-- ftd.column:
+width: fill-container
+align-content: center
+height.fixed.vh: 100
+
+-- ftd.column:
+margin-vertical.px: 24
+width: fill-container
+padding-horizontal.vw: 5
+align-self: center
+align-content: right
+
+-- ftd.text: $hero-mobile.heading
+role: $inherited.types.heading-hero
+style: bold
+color: $colors.accent-primary-
+
+-- ftd.text: $hero-mobile.content
+margin-top.vh: 1
+margin-bottom.vh: 5
+role: $inherited.types.heading-large
+color: $colors.accent-secondary-
+
+-- ftd.row:
+if: { hero-mobile.text-1 != NULL }
+spacing.fixed.px: 8
+
+-- ftd.image:
+src: $assets.files.assets.calendar-white.png
+height.fixed.px: 24
+align-self: center
+
+-- ftd.text: $hero-mobile.text-1
+if: { hero-mobile.text-1 != NULL }
+margin-vertical.vh: 1
+role: $inherited.types.heading-small
+align-self: center
+color: white
+
+-- end: ftd.row
+
+-- ftd.row:
+spacing.fixed.px: 8
+
+-- ftd.image:
+if: { hero-mobile.text-2 != NULL }
+src: $assets.files.assets.clock.svg
+height.fixed.px: 24
+align-self: center
+
+-- ftd.text: $hero-mobile.text-2
+if: { hero-mobile.text-2 != NULL }
+margin-vertical.vh: 1
+role: $inherited.types.heading-small
+align-self: center
+color: white
+
+-- end: ftd.row
+
+-- ftd.row:
+if: { hero-mobile.text-3 != NULL }
+spacing.fixed.px: 8
+
+-- ftd.image:
+src: $assets.files.assets.location-2.png
+height.fixed.px: 24
+align-self: center
+
+-- ftd.text: $hero-mobile.text-3
+if: { hero-mobile.text-3 != NULL }
+margin-vertical.vh: 1
+role: $inherited.types.heading-small
+align-self: center
+color: #ffac1d
+
+-- end: ftd.row
+
+-- lib.button-3: $hero-mobile.cta-button-1
+link: $hero-mobile.cta-button-1-url
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: hero-mobile
+
+
+
+
+
+
+-- component hero-desktop:
+caption heading:
+optional string text-1:
+optional string text-2:
+optional string text-3:
+string cta-button-1:
+string cta-button-1-url:
+body content:
+
+-- ftd.row:
+width: fill-container
+height.fixed.vh: 90
+
+-- ftd.column:
+padding.vh: 16
+width: fill-container
+align-self: center
+align-content: right
+
+-- ftd.text: $hero-desktop.heading
+role: $inherited.types.heading-hero
+style: bold
+color: $colors.accent-primary-
+
+-- ftd.text: $hero-desktop.content
+margin-top.vh: 1
+margin-bottom.vh: 5
+role: $inherited.types.label-large
+style: regular
+color: $colors.accent-secondary-
+text-align: end
+
+-- ftd.row:
+spacing.fixed.px: 16
+
+-- ftd.row:
+if: { hero-desktop.text-1 != NULL }
+spacing.fixed.px: 8
+
+-- ftd.image:
+src: $assets.files.assets.calendar-white.png
+height.fixed.px: 48
+align-self: center
+
+-- ftd.text: $hero-desktop.text-1
+if: { hero-desktop.text-1 != NULL }
+margin-vertical.vh: 1
+role: $inherited.types.heading-medium
+align-self: center
+color: white
+
+-- end: ftd.row
+
+-- ftd.row:
+if: { hero-desktop.text-2 != NULL }
+spacing.fixed.px: 8
+
+-- ftd.image:
+src: $assets.files.assets.clock.svg
+height.fixed.px: 48
+align-self: center
+
+-- ftd.text: $hero-desktop.text-2
+if: { hero-desktop.text-2 != NULL }
+margin-vertical.vh: 1
+role: $inherited.types.heading-medium
+align-self: center
+color: white
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- ftd.row:
+if: { hero-desktop.text-3 != NULL }
+spacing.fixed.px: 8
+
+-- ftd.image:
+src: $assets.files.assets.location-2.png
+height.fixed.px: 48
+align-self: center
+
+-- ftd.text: $hero-desktop.text-3
+if: { hero-desktop.text-3 != NULL }
+margin-vertical.vh: 1
+role: $inherited.types.heading-medium
+align-self: center
+color: #faac1d
+
+-- end: ftd.row
+
+-- lib.button-4: $hero-desktop.cta-button-1
+link: $hero-desktop.cta-button-1-url
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: hero-desktop
