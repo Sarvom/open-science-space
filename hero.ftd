@@ -163,7 +163,6 @@ margin-bottom.vh: 5
 role: $inherited.types.label-large
 style: regular
 color: $colors.accent-secondary-
-text-align: end
 
 -- ftd.row:
 spacing.fixed.px: 16
